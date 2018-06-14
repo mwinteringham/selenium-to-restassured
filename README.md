@@ -23,8 +23,8 @@ You have two options you can either convert from RestAssured to Selenium:
 ```java
 com.jayway.restassured.response.Cookie cookieToConvert = response.getDetailedCookie("COOKIE NAME")
 
- CookieAdapter cookieAdapter = new CookieAdapter();
-        org.openqa.selenium.Cookie convertedCookie = cookieAdapter.convertToSelenium(cookieToConvert);
+CookieAdapter cookieAdapter = new CookieAdapter();
+org.openqa.selenium.Cookie convertedCookie = cookieAdapter.convertToSelenium(cookieToConvert);
 ```
 
 Or you can convert from Selenium to RestAssured
