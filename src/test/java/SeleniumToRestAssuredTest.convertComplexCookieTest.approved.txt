@@ -1,0 +1,1 @@
+Cookie name=Cookie value;Path=/test;Domain=www.mwtestconsultancy.co.uk;Secure;HttpOnly
