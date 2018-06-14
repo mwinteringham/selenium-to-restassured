@@ -1,0 +1,1 @@
+class com.jayway.restassured.response.Cookie

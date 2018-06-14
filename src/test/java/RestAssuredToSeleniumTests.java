@@ -1,4 +1,5 @@
 import com.jayway.restassured.response.Cookie;
+import com.jayway.restassured.response.Response;
 import org.approvaltests.Approvals;
 import org.junit.Test;
 import uk.co.mwtestconsultancy.CookieAdapter;
@@ -6,6 +7,7 @@ import uk.co.mwtestconsultancy.CookieAdapter;
 import java.util.Calendar;
 import java.util.TimeZone;
 
+import static com.jayway.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -61,6 +63,17 @@ public class RestAssuredToSeleniumTests {
         org.openqa.selenium.Cookie adaptedCookie = cookieAdapter.convertToSelenium(restAssuredCookie);
 
         assertThat(adaptedCookie.getExpiry().toString(), is(currentDate.getTime().toString()));
+    }
+
+    @Test
+    public void convertLiveCookieTest(){
+        Response response = given()
+                                .get("http://the-internet.herokuapp.com/");
+
+        CookieAdapter cookieAdapter = new CookieAdapter();
+        org.openqa.selenium.Cookie convertedCookie = cookieAdapter.convertToSelenium(response.getDetailedCookie("rack.session"));
+
+        Approvals.verify(convertedCookie.getClass());
     }
 
 }

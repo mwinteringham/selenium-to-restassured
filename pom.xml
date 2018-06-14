@@ -6,7 +6,7 @@
 
     <groupId>uk.co.mwtestconsultancy</groupId>
     <artifactId>selenium-to-restassured</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.1</version>
 
     <build>
         <plugins>

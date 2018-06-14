@@ -1,6 +1,8 @@
 import org.approvaltests.Approvals;
 import org.junit.Test;
 import org.openqa.selenium.Cookie;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import uk.co.mwtestconsultancy.CookieAdapter;
 import uk.co.mwtestconsultancy.ExpiryType;
 
@@ -79,6 +81,19 @@ public class SeleniumToRestAssuredTest {
         com.jayway.restassured.response.Cookie adaptedCookie = cookieAdapter.convertToRestAssured(seleniumCookie);
 
         assertThat(adaptedCookie.getMaxAge(), is(result));
+    }
+
+    @Test
+    public void convertLiveCookieTest(){
+        WebDriver driver = new ChromeDriver();
+        driver.navigate().to("http://the-internet.herokuapp.com/");
+        Cookie cookie = driver.manage().getCookieNamed("rack.session");
+
+        CookieAdapter cookieAdapter = new CookieAdapter();
+        com.jayway.restassured.response.Cookie adaptedCookie = cookieAdapter.convertToRestAssured(cookie);
+
+        driver.quit();
+        Approvals.verify(adaptedCookie.getClass());
     }
 
 }
