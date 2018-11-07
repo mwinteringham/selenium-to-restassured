@@ -1,5 +1,5 @@
-import com.jayway.restassured.response.Cookie;
-import com.jayway.restassured.response.Response;
+import io.restassured.http.Cookie;
+import io.restassured.response.Response;
 import org.approvaltests.Approvals;
 import org.junit.Test;
 import uk.co.mwtestconsultancy.CookieAdapter;
@@ -7,7 +7,7 @@ import uk.co.mwtestconsultancy.CookieAdapter;
 import java.util.Calendar;
 import java.util.TimeZone;
 
-import static com.jayway.restassured.RestAssured.given;
+import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 

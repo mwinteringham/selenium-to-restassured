@@ -20,7 +20,7 @@ public class SeleniumToRestAssuredTest {
         Cookie seleniumCookie = new Cookie.Builder("Cookie name", "Cookie value").build();
 
         CookieAdapter cookieAdapter = new CookieAdapter();
-        com.jayway.restassured.response.Cookie adaptedCookie = cookieAdapter.convertToRestAssured(seleniumCookie);
+        io.restassured.http.Cookie adaptedCookie = cookieAdapter.convertToRestAssured(seleniumCookie);
 
         Approvals.verify(adaptedCookie.toString());
     }
@@ -35,7 +35,7 @@ public class SeleniumToRestAssuredTest {
                                             .build();
 
         CookieAdapter cookieAdapter = new CookieAdapter();
-        com.jayway.restassured.response.Cookie adaptedCookie = cookieAdapter.convertToRestAssured(seleniumCookie);
+        io.restassured.http.Cookie adaptedCookie = cookieAdapter.convertToRestAssured(seleniumCookie);
 
         Approvals.verify(adaptedCookie.toString());
     }
@@ -54,7 +54,7 @@ public class SeleniumToRestAssuredTest {
                                             .build();
 
         CookieAdapter cookieAdapter = new CookieAdapter(ExpiryType.EXPIRY);
-        com.jayway.restassured.response.Cookie adaptedCookie = cookieAdapter.convertToRestAssured(seleniumCookie);
+        io.restassured.http.Cookie adaptedCookie = cookieAdapter.convertToRestAssured(seleniumCookie);
 
         Approvals.verify(adaptedCookie);
     }
@@ -78,7 +78,7 @@ public class SeleniumToRestAssuredTest {
                 .build();
 
         CookieAdapter cookieAdapter = new CookieAdapter(ExpiryType.MAXAGE);
-        com.jayway.restassured.response.Cookie adaptedCookie = cookieAdapter.convertToRestAssured(seleniumCookie);
+        io.restassured.http.Cookie adaptedCookie = cookieAdapter.convertToRestAssured(seleniumCookie);
 
         assertThat(adaptedCookie.getMaxAge(), is(result));
     }
@@ -90,7 +90,7 @@ public class SeleniumToRestAssuredTest {
         Cookie cookie = driver.manage().getCookieNamed("rack.session");
 
         CookieAdapter cookieAdapter = new CookieAdapter();
-        com.jayway.restassured.response.Cookie adaptedCookie = cookieAdapter.convertToRestAssured(cookie);
+        io.restassured.http.Cookie adaptedCookie = cookieAdapter.convertToRestAssured(cookie);
 
         driver.quit();
         Approvals.verify(adaptedCookie.getClass());

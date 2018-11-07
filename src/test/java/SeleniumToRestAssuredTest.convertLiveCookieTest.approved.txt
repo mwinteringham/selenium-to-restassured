@@ -1,1 +1,1 @@
-class com.jayway.restassured.response.Cookie
+class io.restassured.http.Cookie

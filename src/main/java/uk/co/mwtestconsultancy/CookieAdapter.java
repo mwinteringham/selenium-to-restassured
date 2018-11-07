@@ -1,6 +1,6 @@
 package uk.co.mwtestconsultancy;
 
-import com.jayway.restassured.response.Cookie;
+import io.restassured.http.Cookie;
 
 import java.util.Calendar;
 import java.util.TimeZone;
