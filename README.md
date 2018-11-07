@@ -33,7 +33,7 @@ Or you can convert from Selenium to RestAssured
 org.openqa.selenium.Cookie cookieToConvert = driver.manage().getCookieNamed("COOKIE NAME");
 
 CookieAdapter cookieAdapter = new CookieAdapter();
-com.jayway.restassured.response.Cookie adaptedCookie = cookieAdapter.convertToRestAssured(seleniumCookie);
+io.restassured.http.Cookie adaptedCookie = cookieAdapter.convertToRestAssured(seleniumCookie);
 ```
 
 Additionally ```CookieAdapter``` will take an enum to convert Selenium expiry dates into either:
