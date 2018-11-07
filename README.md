@@ -21,7 +21,7 @@ Easily share Selenium WebDriver cookies with Rest Assured back and forth with th
 You have two options you can either convert from RestAssured to Selenium:
 
 ```java
-com.jayway.restassured.response.Cookie cookieToConvert = response.getDetailedCookie("COOKIE NAME")
+io.restassured.http.Cookie cookieToConvert = response.getDetailedCookie("COOKIE NAME")
 
 CookieAdapter cookieAdapter = new CookieAdapter();
 org.openqa.selenium.Cookie convertedCookie = cookieAdapter.convertToSelenium(cookieToConvert);
