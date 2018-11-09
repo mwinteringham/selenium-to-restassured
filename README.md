@@ -2,6 +2,12 @@
 
 Easily share Selenium WebDriver cookies with Rest Assured back and forth with this Java api.
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://travis-ci.org/mwinteringham/selenium-to-restassured.svg?branch=master)](https://travis-ci.org/mwinteringham/selenium-to-restassured)
+[![GitHub release](https://img.shields.io/github/release/mwinteringham/selenium-to-restassured/all.svg?colorB=brightgreen)](https://github.com/mwinteringham/selenium-to-restassured)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/uk.co.mwtestconsultancy/selenium-to-restassured/badge.svg)](https://maven-badges.herokuapp.com/maven-central/uk.co.mwtestconsultancy/selenium-to-restassured)
+[![Javadocs](http://www.javadoc.io/badge/uk.co.mwtestconsultancy/selenium-to-restassured.svg)](http://www.javadoc.io/doc/uk.co.mwtestconsultancy/selenium-to-restassured)
+
 ## Installation
 
 [Download the latest jar](https://github.com/mwinteringham/selenium-to-restassured/releases) and add to your project. You can then add it to your maven project by adding the following dependency:
