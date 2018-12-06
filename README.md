@@ -10,9 +10,7 @@ Easily share Selenium WebDriver cookies with Rest Assured back and forth with th
 <dependency>
     <groupId>uk.co.mwtestconsultancy</groupId>
     <artifactId>selenium-to-restassured</artifactId>
-    <version>0.1</version>
-    <scope>system</scope>
-    <systemPath>${project.basedir}/path/to/jar</systemPath>
+    <version>0.3</version>
 </dependency>
 ```
 
